@@ -4,7 +4,9 @@
      $csrf = getCsrfToken();
 
      function checkLogin() {
-          session_start();
+          if (session_status() === PHP_SESSION_NONE) {
+               session_start();
+          }
           if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true && isset($_SESSION['id_user'])) {
                require_once 'koneksi.php';
                $id_user = $_SESSION['id_user'];

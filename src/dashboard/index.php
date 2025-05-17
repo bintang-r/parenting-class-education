@@ -1,4 +1,11 @@
-<!-- index.php -->
+<?php 
+     session_start();
+     if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset($_SESSION['id_user'])) {
+          header("Location: ../login.php");
+          exit;
+     }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,7 +64,7 @@
                          <i class="fas fa-user-circle text-2xl text-gray-700"></i>
                     </button>
                     <div id="userDropdown" class="absolute right-0 mt-[100px] w-[200px] bg-white rounded shadow-lg py-2 z-50 hidden">
-                         <a href="/logout.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                         <a href="./logout.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
                               <i class="fas fa-sign-out-alt mr-2"></i> Logout
                          </a>
                          <a href="../index.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
