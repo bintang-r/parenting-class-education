@@ -116,7 +116,7 @@
                </div>
           </div>
 
-          <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8" data-aos="fade-up">
+          <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 mt-3" data-aos="fade-up">
                <div class="text-center mb-6">
                     <div class="flex flex-col items-center space-y-3">
                          <span class="text-3xl font-bold text-indigo-600">Masuk Ke Aplikasi</span>
@@ -124,7 +124,7 @@
                     <p class="text-gray-500">Masukkan data login anda, untuk kelola data admin.</p>
                </div>
 
-                 <form class="space-y-6" enctype="multipart/form-data"  method="POST" action="">
+               <form class="space-y-6" enctype="multipart/form-data"  method="POST" action="">
                     <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
 
                     <div>
@@ -143,14 +143,6 @@
                               <input type="password" name="password" placeholder="********" required
                                    class="w-full outline-none bg-transparent text-gray-700 placeholder-gray-400" />
                          </div>
-                    </div>
-
-                    <div class="flex items-center justify-between text-sm">
-                         <label class="flex items-center space-x-2">
-                              <input type="checkbox" class="accent-indigo-500" />
-                              <span>Remember me</span>
-                         </label>
-                         <a href="#" class="text-indigo-600 hover:underline">Forgot Password?</a>
                     </div>
 
                     <button type="submit"
