@@ -31,12 +31,12 @@
 
      <body class="bg-gray-50 text-gray-800">
           <!-- Back to Top -->
-          <a href="#top" class="fixed bottom-5 right-5 z-50 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 px-5 py-3">
+          <a id="scrollToTopBtn" href="#top" class="fixed bottom-5 right-5 z-50 bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 px-5 py-3">
           <i class="fas fa-arrow-up"></i>
           </a>
 
           <!-- Navbar -->
-          <nav id="top" class="fixed top-0 left-0 w-full bg-white text-indigo-600 shadow-md z-50">
+          <nav id="top" class="fixed top-0 left-0 w-full bg-white text-indigo-500 shadow-md z-50">
                <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
                     <!-- Logo -->
                     <div class="flex items-center space-x-3">
@@ -62,7 +62,7 @@
                          </li>
                          
                          <li>
-                              <a href="#investasi" class="hover:text-indigo-400 flex items-center py-2"><i class="fas fa-hand-holding-usd mr-1"></i> Investasi</a>
+                              <a href="#paket" class="hover:text-indigo-400 flex items-center py-2"><i class="fas fa-box-open mr-1"></i> Paket </a>
                          </li>
                          
                          <li>
@@ -81,9 +81,17 @@
                <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
                     <div class="text-center md:text-left max-w-xl" data-aos="fade-right">
-                         <h1 class="md:text-5xl text-3xl font-bold leading-tight mb-4 text-indigo-800">Super Parenting</h1>
+                         <h1 class="md:text-5xl text-3xl font-bold leading-tight mb-4 text-indigo-500">Super Parenting</h1>
                          
                          <p class="text-xl mb-6 text-gray-700">Menjadi Orang Tua Hebat di Era Digital bersama dr. Aisah Dahlan</p>
+
+                         <p class="text-md mb-2 text-gray-600">
+                              Akademi ini menghadirkan pembelajaran interaktif seputar parenting modern dan solusi praktis menghadapi tantangan keluarga masa kini.
+                         </p>
+
+                         <p class="text-md text-gray-600">
+                              Dapatkan ilmu, inspirasi, dan komunitas positif untuk mendukung perjalanan Anda sebagai orang tua hebat.
+                         </p>
 
                          <div class="space-x-3 mt-10">
                               <a href="#daftar" class="bg-indigo-600 text-white md:px-6 md:py-3 px-3 py-2 md:text-md text-sm rounded-md font-semibold hover:bg-indigo-700 transition"><i class="fas fa-calendar-check mr-2"></i>Daftar Sekarang</a>
@@ -141,10 +149,10 @@
                </div>
           </section>
 
-          <!-- Investasi -->
-          <section id="investasi" class="py-16 px-6" data-aos="fade-up">
+          <!-- paket -->
+          <section id="paket" class="py-16 px-6" data-aos="fade-up">
                <div class="max-w-6xl mx-auto">
-                    <h2 class="text-3xl font-semibold mb-8 text-center">Pilihan Investasi</h2>
+                    <h2 class="text-3xl font-semibold mb-8 text-center">Pilihan Paket</h2>
                     <div class="grid md:grid-cols-3 gap-6">
                          <div class="bg-yellow-50 border-yellow-200 border rounded-xl shadow-lg p-6 text-center hover:shadow-xl">
                               <h3 class="text-xl font-bold mb-2 text-yellow-700"><i class="fas fa-user mr-2"></i>Bronze</h3>
@@ -189,26 +197,28 @@
 
           <!-- Testimoni -->
           <section id="testimoni" class="py-16 bg-gray-100 px-6" data-aos="fade-up">
-          <div class="max-w-6xl mx-auto">
-               <h2 class="text-3xl font-semibold text-center mb-10">Apa Kata Mereka?</h2>
-               <div class="grid md:grid-cols-3 gap-6">
-               <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <img src="../public/img/no-user.png" class="rounded-full mx-auto mb-4 w-[100px]" />
-                    <p class="italic">"Sangat mencerahkan, saya jadi tahu bagaimana lebih dekat dengan anak-anak di era digital."</p>
-                    <p class="mt-2 font-bold">- Ibu Rina</p>
+               <div class="max-w-6xl mx-auto">
+                    <h2 class="text-3xl font-semibold text-center mb-10">Apa Kata Mereka?</h2>
+                    <div class="grid md:grid-cols-3 gap-6">
+                         <div class="bg-white p-6 rounded-lg shadow text-center">
+                              <img src="../public/img/person/person-1.jpg" class="rounded-full mx-auto mb-4 w-[100px] h-[100px] object-cover bg-center" />
+                              <p class="italic">"Sangat mencerahkan, saya jadi tahu bagaimana lebih dekat dengan anak-anak di era digital."</p>
+                              <p class="mt-2 font-bold">- Pak Agus</p>
+                         </div>
+
+                         <div class="bg-white p-6 rounded-lg shadow text-center">
+                              <img src="../public/img/person/person-2.jpg" class="rounded-full mx-auto mb-4 w-[100px] h-[100px] object-cover bg-center" />
+                              <p class="italic">"Pembicaraannya luar biasa dan aplikatif. Sangat disarankan!"</p>
+                              <p class="mt-2 font-bold">- Ibu Rina</p>
+                         </div>
+
+                         <div class="bg-white p-6 rounded-lg shadow text-center">
+                              <img src="../public/img/person/person-4.jpg" class="rounded-full mx-auto mb-4 w-[100px] h-[100px] object-cover bg-center" />
+                              <p class="italic">"Sesi parenting terbaik yang pernah saya hadiri. Terima kasih!"</p>
+                              <p class="mt-2 font-bold">- Ibu Maya</p>
+                         </div>
+                    </div>
                </div>
-               <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <img src="../public/img/no-user.png" class="rounded-full mx-auto mb-4 w-[100px]" />
-                    <p class="italic">"Pembicaraannya luar biasa dan aplikatif. Sangat disarankan!"</p>
-                    <p class="mt-2 font-bold">- Pak Arif</p>
-               </div>
-               <div class="bg-white p-6 rounded-lg shadow text-center">
-                    <img src="../public/img/no-user.png" class="rounded-full mx-auto mb-4 w-[100px]" />
-                    <p class="italic">"Sesi parenting terbaik yang pernah saya hadiri. Terima kasih!"</p>
-                    <p class="mt-2 font-bold">- Bunda Maya</p>
-               </div>
-               </div>
-          </div>
           </section>
 
           <!-- Form Registrasi -->
@@ -304,7 +314,7 @@
                          <ul class="space-y-2 text-md">
                               <li><a href="#tentang" class="hover:text-indigo-600">Tentang</a></li>
                               <li><a href="#jadwal" class="hover:text-indigo-600">Jadwal</a></li>
-                              <li><a href="#investasi" class="hover:text-indigo-600">Investasi</a></li>
+                              <li><a href="#paket" class="hover:text-indigo-600">paket</a></li>
                               <li><a href="#testimoni" class="hover:text-indigo-600">Testimoni</a></li>
                          </ul>
                     </div>
@@ -346,6 +356,8 @@
           <script src="../public/js/bukti-pembayaran.js"></script>
           
           <script src="../public/icons/js/all.js"></script>
+
+          <script src="../public/js/scoll-top.js"></script>
           
           <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
