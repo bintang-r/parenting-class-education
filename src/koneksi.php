@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db   = "nama_database"; 
+$db   = "db_bintang29"; 
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
