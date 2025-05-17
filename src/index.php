@@ -1,3 +1,111 @@
+<?php
+
+require_once './csrf.php';
+
+$csrf = getCsrfToken();
+
+function daftarKelasParenting() {
+     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_daftar'])) {
+          // Validasi CSRF Token (seharusnya dibandingkan dengan token di sesi)
+          if (!isset($_POST['csrf_token'])) {
+               echo "<script>alert('Token tidak valid. Silakan refresh halaman.');</script>";
+               return;
+          }
+
+          // Include koneksi
+          require_once 'koneksi.php';
+          if (!isset($conn) || !$conn) {
+               echo "<script>alert('Koneksi database gagal.');</script>";
+               return;
+          }
+
+          // Ambil data dari form dan sanitasi
+          $nama = isset($_POST['nama']) ? trim($_POST['nama']) : '';
+          $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+          $nomor_ponsel = isset($_POST['nomorPonsel']) ? trim($_POST['nomorPonsel']) : '';
+          $jenis_paket = isset($_POST['paket']) ? trim($_POST['paket']) : '';
+
+            // Validasi wajib isi dan minimal 2 karakter
+          if (
+               empty($nama) || strlen($nama) < 2 ||
+               empty($email) || strlen($email) < 2 ||
+               empty($nomor_ponsel) || strlen($nomor_ponsel) < 2 ||
+               empty($jenis_paket) || strlen($jenis_paket) < 2
+          ) {
+               echo "<script>alert('Semua field wajib diisi dan minimal 2 karakter.');</script>";
+               return;
+          }
+
+          // Sanitasi
+          $nama = htmlspecialchars($nama);
+          $email = htmlspecialchars($email);
+          $nomor_ponsel = htmlspecialchars($nomor_ponsel);
+          $jenis_paket = htmlspecialchars($jenis_paket);
+
+          // Validasi dan proses upload gambar
+          $upload_dir = __DIR__ . '/../public/storage/peserta/';
+          if (!is_dir($upload_dir)) {
+               mkdir($upload_dir, 0777, true);
+          }
+
+          $bukti_pembayaran_path = '';
+          $bukti_pembayaran_nama = '';
+
+          if (isset($_FILES['buktiPembayaran']) && $_FILES['buktiPembayaran']['error'] === UPLOAD_ERR_OK) {
+               $file_tmp = $_FILES['buktiPembayaran']['tmp_name'];
+               $file_name = $_FILES['buktiPembayaran']['name'];
+               $file_size = $_FILES['buktiPembayaran']['size'];
+               $file_type = mime_content_type($file_tmp);
+
+               $allowed_types = ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'];
+               $max_size = 2 * 1024 * 1024; // 2MB
+
+               if (!in_array($file_type, $allowed_types)) {
+                    echo "<script>alert('File harus berupa gambar (JPG, JPEG, PNG, WEBP).');</script>";
+                    return;
+               }
+
+               if ($file_size > $max_size) {
+                    echo "<script>alert('Ukuran file maksimal 2MB.');</script>";
+                    return;
+               }
+
+               $ext = pathinfo($file_name, PATHINFO_EXTENSION);
+               $hash_name = hash_file('sha256', $file_tmp) . '.' . $ext;
+               $destination = $upload_dir . $hash_name;
+
+               if (!move_uploaded_file($file_tmp, $destination)) {
+               $bukti_pembayaran_path = 'public/storage/peserta/' . $hash_name;
+               $bukti_pembayaran_nama = $file_name;
+               }
+
+               $bukti_pembayaran_path = 'public/storage/peserta/file-img/' . $hash_name;
+               $bukti_pembayaran_nama = $file_name;
+          } else {
+               echo "<script>alert('Bukti pembayaran wajib diupload.');</script>";
+               return;
+          }
+
+          // Simpan ke database
+          $stmt = mysqli_prepare($conn, "INSERT INTO peserta (nomor_ponsel, email, nama, bukti_pembayaran, jenis_paket) VALUES (?, ?, ?, ?, ?)");
+          mysqli_stmt_bind_param($stmt, "sssss", $nomor_ponsel, $email, $nama, $bukti_pembayaran_path, $jenis_paket);
+
+          if (mysqli_stmt_execute($stmt)) {
+               echo "<script>alert('Pendaftaran berhasil. Terima kasih!');</script>";
+               echo "<script>window.location.href='#top';</script>";
+          } else {
+               echo "<script>alert('Pendaftaran gagal: " . mysqli_error($conn) . "');</script>";
+          }
+
+          mysqli_stmt_close($stmt);
+          mysqli_close($conn);
+     }
+}
+
+daftarKelasParenting(); // panggil fungsi
+
+?>
+
 <!DOCTYPE html>
 <html lang="id">
      <head>
@@ -221,22 +329,23 @@
                </div>
           </section>
 
-          <!-- Form Registrasi -->
           <section id="daftar" class="py-16 px-6 max-w-3xl mx-auto" data-aos="fade-up">
                <h2 class="text-3xl font-semibold mb-6 text-center">Daftar Sekarang</h2>
 
-               <form class="bg-white p-8 rounded-xl shadow-xl space-y-6" onsubmit="return false;">
+               <form class="bg-white p-8 rounded-xl shadow-xl space-y-6" enctype="multipart/form-data"  method="POST" action="">
+                    <input type="hidden" name="csrf_token" value="<?= $csrf ?>">
+
                     <div>
                          <label class="block mb-2 font-semibold">Nama Lengkap</label>
-                         <input type="text" placeholder="Masukkan nama Anda" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+                         <input type="text" placeholder="Masukkan nama Anda" name="nama" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
                     </div>
                     <div>
                          <label class="block mb-2 font-semibold">Email</label>
-                         <input type="email" placeholder="Masukkan email aktif" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+                         <input type="email" placeholder="Masukkan email aktif" name="email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
                     </div>
                     <div>
                          <label class="block mb-2 font-semibold">Nomor WhatsApp</label>
-                         <input type="tel" placeholder="08xxxxxxxxxx" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+                         <input type="tel" placeholder="08xxxxxxxxxx" name="nomorPonsel" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
                     </div>
 
                     <div>
@@ -254,7 +363,7 @@
                          <label class="block mb-2 font-semibold">Bukti Pembayaran</label>
                          <div id="uploadArea" 
                               class="w-full border-2 border-dashed border-gray-400 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:border-indigo-600 transition-colors relative">
-                         <input type="file" id="buktiPembayaran" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required />
+                         <input type="file" id="buktiPembayaran" name="buktiPembayaran" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required />
                          <div id="uploadText" class="text-gray-500 text-center">
                               <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2 h-10 w-10 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                               <path stroke-linecap="round" stroke-linejoin="round" d="M7 16v-4m0 0l-3 3m3-3l3 3m6-3v4m0 0l3-3m-3 3l-3-3m0-4V4m0 0l-3 3m3-3l3 3" />
@@ -289,7 +398,7 @@
                          </div>
                     </div>
 
-                    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 font-semibold">
+                    <button type="submit" name="submit_daftar" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 font-semibold">
                          <i class="fas fa-paper-plane mr-2"></i>Kirim Pendaftaran
                     </button>
                </form>
