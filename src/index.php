@@ -3,10 +3,12 @@
      <head>
           <meta charset="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <title>Super Parenting</title>
+          <title>Super Parenting | Home</title>
           <script src="https://cdn.tailwindcss.com"></script>
           <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
           <link rel="stylesheet" href="../public/icons/css/all.css">
+          
+          <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
 
           <style>
                html {
