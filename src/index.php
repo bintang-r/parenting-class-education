@@ -16,6 +16,15 @@
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                }
           </style>
+
+          <style>
+               /* Tambahan jika mau override css */
+               #uploadArea:focus-within {
+                    outline: none;
+                    border-color: #4f46e5; /* indigo-600 */
+                    background-color: #eef2ff; /* indigo-50 */
+               }
+          </style>
      </head>
 
      <body class="bg-gray-50 text-gray-800">
@@ -29,7 +38,7 @@
                <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
                     <!-- Logo -->
                     <div class="flex items-center space-x-3">
-                         <img src="https://via.placeholder.com/40" alt="Logo" class="h-10" />
+                         <img src="../public/img/logo-super-parenting.png" alt="Logo" class="w-[40px]" />
                          <span class="text-xl font-bold">Super Parenting</span>
                     </div>
 
@@ -66,7 +75,7 @@
           </nav>
 
           <!-- Hero -->
-          <section class="pt-36 pb-20 bg-gradient-to-br from-indigo-100 to-indigo-50 px-4 md:px-0">
+          <section class="pt-36 pb-20 bg-white px-4 md:px-0">
                <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
                     <div class="text-center md:text-left max-w-xl" data-aos="fade-right">
@@ -82,7 +91,7 @@
                     </div>
 
                     <div data-aos="fade-left ml-5" class="md:block hidden">
-                         <img src="../public/img/illustration.png" alt="Hero" class="w-[500px]" />
+                         <img src="../public/img/illustration2.jpg" alt="Hero" class="w-[500px]" />
                     </div>
                </div>                                                                     
           </section>
@@ -93,8 +102,8 @@
                Tentang <span class="text-indigo-500">Seminar</span>
                </h2>
 
-               <div class="bg-gradient-to-r from-white to-indigo-50 rounded-2xl p-10 text-center border border-indigo-100">
-                    <p class="text-lg text-gray-700 leading-relaxed">
+               <div class="bg-gradient-to-r from-blue-500 to-indigo-800 rounded-2xl p-10 text-center border border-indigo-100">
+                    <p class="text-lg text-white leading-relaxed">
                          Seminar ini dirancang khusus bagi para orang tua yang ingin lebih bijak dan sigap menghadapi tantangan era digital
                          bersama anak-anak tercinta. Dipandu oleh narasumber inspiratif, Anda akan mendapatkan wawasan mendalam, strategi
                          parenting kekinian, dan tips praktis untuk membangun hubungan keluarga yang harmonis dan adaptif di zaman teknologi.
@@ -103,9 +112,9 @@
           </section>
 
           <!-- Jadwal -->
-          <section id="jadwal" class="py-20 bg-indigo-50" data-aos="fade-up">
+          <section id="jadwal" class="py-20 bg-gradient-to-r from-blue-500 to-indigo-800 rounded-3xl" data-aos="fade-up">
                <div class="max-w-5xl mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center text-indigo-800 mb-12">Jadwal Acara</h2>
+                    <h2 class="text-3xl font-bold text-center text-white mb-12">Jadwal Acara</h2>
                     <div class="grid md:grid-cols-3 gap-6 text-center">
 
                          <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
@@ -156,16 +165,16 @@
                </div>
           </section>
 
-          <section id="kontak" class="py-20 bg-gray-100" data-aos="fade-up">
+          <section id="kontak" class="py-20 bg-gradient-to-r from-blue-500 to-indigo-800 rounded-3xl" data-aos="fade-up">
                <div class="max-w-6xl mx-auto px-6">
-                    <h2 class="text-3xl font-bold text-center mb-10">Kontak Kami</h2>
+                    <h2 class="text-3xl font-bold text-center mb-20 text-white">Kontak Kami</h2>
 
-                    <div class="grid md:grid-cols-2 gap-8">
+                    <div class="grid md:grid-cols-2 gap-8 text-white">
                          <div class="space-y-4">
-                              <p class="text-lg flex items-center"><i class="fas fa-envelope text-indigo-600 mr-3"></i> info@superparenting.id</p>
-                              <p class="text-lg flex items-center"><i class="fas fa-phone text-indigo-600 mr-3"></i> +62 812-3456-7890</p>
-                              <p class="text-lg flex items-center"><i class="fab fa-whatsapp text-green-600 mr-3"></i> +62 812-9999-9999</p>
-                              <p class="text-lg flex items-center"><i class="fas fa-map-marker-alt text-indigo-600 mr-3"></i> Ruang Phinisi, Hotel Claro Makassar</p>
+                              <p class="text-lg flex items-center font-bold text-xl"><i class="fas fa-envelope text-white mr-3"></i> info@superparenting.id</p>
+                              <p class="text-lg flex items-center font-bold text-xl"><i class="fas fa-phone text-white mr-3"></i> +62 812-3456-7890</p>
+                              <p class="text-lg flex items-center font-bold text-xl"><i class="fab fa-whatsapp text-white mr-3"></i> +62 812-9999-9999</p>
+                              <p class="text-lg flex items-center font-bold text-xl"><i class="fas fa-map-marker-alt text-white mr-3"></i> Ruang Phinisi, Hotel Claro Makassar</p>
                          </div>
 
                          <div class="overflow-hidden rounded-lg shadow-lg">
@@ -202,49 +211,91 @@
 
           <!-- Form Registrasi -->
           <section id="daftar" class="py-16 px-6 max-w-3xl mx-auto" data-aos="fade-up">
-          <h2 class="text-3xl font-semibold mb-6 text-center">Daftar Sekarang</h2>
-          <form class="bg-white p-8 rounded-xl shadow-xl space-y-6">
-          <div>
-               <label class="block mb-2 font-semibold">Nama Lengkap</label>
-               <input type="text" placeholder="Masukkan nama Anda" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
-          </div>
-          <div>
-               <label class="block mb-2 font-semibold">Email</label>
-               <input type="email" placeholder="Masukkan email aktif" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
-          </div>
-          <div>
-               <label class="block mb-2 font-semibold">Nomor WhatsApp</label>
-               <input type="tel" placeholder="08xxxxxxxxxx" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
-          </div>
-          <div>
-               <label class="block mb-2 font-semibold">Pilih Paket</label>
-               <div class="flex flex-wrap gap-4">
-               <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="paket" value="Bronze" class="hidden peer">
-                    <div class="px-4 py-2 rounded-full border border-gray-300 peer-checked:border-indigo-600 peer-checked:bg-indigo-100 font-medium">Bronze</div>
-               </label>
-               <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="paket" value="Gold" class="hidden peer">
-                    <div class="px-4 py-2 rounded-full border border-gray-300 peer-checked:border-indigo-600 peer-checked:bg-indigo-100 font-medium">Gold</div>
-               </label>
-               <label class="flex items-center space-x-2 cursor-pointer">
-                    <input type="radio" name="paket" value="Platinum" class="hidden peer">
-                    <div class="px-4 py-2 rounded-full border border-gray-300 peer-checked:border-indigo-600 peer-checked:bg-indigo-100 font-medium">Platinum</div>
-               </label>
-               </div>
-          </div>
-          <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 font-semibold">
-               <i class="fas fa-paper-plane mr-2"></i>Kirim Pendaftaran
-          </button>
-          </form>
+               <h2 class="text-3xl font-semibold mb-6 text-center">Daftar Sekarang</h2>
+
+               <form class="bg-white p-8 rounded-xl shadow-xl space-y-6" onsubmit="return false;">
+                    <div>
+                         <label class="block mb-2 font-semibold">Nama Lengkap</label>
+                         <input type="text" placeholder="Masukkan nama Anda" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+                    </div>
+                    <div>
+                         <label class="block mb-2 font-semibold">Email</label>
+                         <input type="email" placeholder="Masukkan email aktif" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+                    </div>
+                    <div>
+                         <label class="block mb-2 font-semibold">Nomor WhatsApp</label>
+                         <input type="tel" placeholder="08xxxxxxxxxx" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required />
+                    </div>
+
+                    <div>
+                         <div class="bg-indigo-50 border border-indigo-300 rounded-xl p-6 mb-8 shadow-md max-w-md mx-auto">
+                              <h3 class="text-xl font-semibold mb-2 text-indigo-700">Tujuan Pembayaran</h3>
+                              
+                              <div class="my-3">
+                                   <img src="../public/img/bni-icon.webp" alt="icon-bni" class="w-[100px]">
+                              </div>
+                              
+                              <p class="text-gray-700"><span class="font-semibold">1234 5678 9012 3456</span></p>
+                              <p class="text-gray-700"><span class="font-semibold">Ibu Susanti</span></p>
+                         </div>
+
+                         <label class="block mb-2 font-semibold">Bukti Pembayaran</label>
+                         <div id="uploadArea" 
+                              class="w-full border-2 border-dashed border-gray-400 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:border-indigo-600 transition-colors relative">
+                         <input type="file" id="buktiPembayaran" accept="image/*" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required />
+                         <div id="uploadText" class="text-gray-500 text-center">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-2 h-10 w-10 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M7 16v-4m0 0l-3 3m3-3l3 3m6-3v4m0 0l3-3m-3 3l-3-3m0-4V4m0 0l-3 3m3-3l3 3" />
+                              </svg>
+                              <p>Drag & Drop atau klik untuk upload gambar</p>
+                              <small class="text-gray-400">Hanya file gambar yang diperbolehkan</small>
+                         </div>
+                         <div id="previewWrapper" class="hidden relative w-full max-w-xs mx-auto">
+                              <img id="previewBukti" alt="Preview Bukti Pembayaran" class="rounded-lg shadow-lg w-full object-contain transition-opacity duration-300 opacity-0" />
+                              <button type="button" id="removeBtn" title="Hapus gambar" 
+                              class="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white rounded-full w-8 h-8 flex items-center justify-center shadow-lg">
+                              &times;
+                              </button>
+                         </div>
+                    </div>
+
+                    <div class="my-5">
+                         <label class="block mb-2 font-semibold">Pilih Paket</label>
+                         <div class="flex flex-wrap md:gap-4 gap-3 md:mt-0 mt-3">
+                              <label class="flex items-center md:space-x-2 space-x-1 cursor-pointer">
+                                   <input type="radio" name="paket" value="Bronze" class="hidden peer" required>
+                                   <div class="md:px-4 md:py-2 px-3 py-1 rounded-full border border-gray-300 peer-checked:border-indigo-600 peer-checked:bg-indigo-100 font-medium">Bronze</div>
+                              </label>
+                              <label class="flex items-center md:space-x-2 space-x-1 cursor-pointer">
+                                   <input type="radio" name="paket" value="Gold" class="hidden peer" required>
+                                   <div class="md:px-4 md:py-2 px-3 py-1 rounded-full border border-gray-300 peer-checked:border-indigo-600 peer-checked:bg-indigo-100 font-medium">Gold</div>
+                              </label>
+                              <label class="flex items-center md:space-x-2 space-x-1 cursor-pointer">
+                                   <input type="radio" name="paket" value="Platinum" class="hidden peer" required>
+                                   <div class="md:px-4 md:py-2 px-3 py-1 rounded-full border border-gray-300 peer-checked:border-indigo-600 peer-checked:bg-indigo-100 font-medium">Platinum</div>
+                              </label>
+                         </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 font-semibold">
+                         <i class="fas fa-paper-plane mr-2"></i>Kirim Pendaftaran
+                    </button>
+               </form>
           </section>
+
 
           <!-- Footer -->
           <footer class="bg-gray-900 text-white border-t mt-12">
                <div class="max-w-7xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-center md:text-left">
                     <div>
-                         <h2 class="text-xl font-bold mb-3">Super Parenting</h2>
-                         <p class="text-sm">Menjadi Orang Tua Hebat di Era Digital bersama dr. Aisah Dahlan.</p>
+                         <div class="flex md:flex-row flex-col md:text-left text-center space-x-3">
+                              <img src="../public/img/logo-super-parenting.png" class="w-[100px] mx-auto" alt="logo-super-parenting">
+
+                              <div>
+                                   <h2 class="text-xl font-bold mb-3">Super Parenting</h2>
+                                   <p class="text-sm">Menjadi Orang Tua Hebat di Era Digital bersama dr. Aisah Dahlan.</p>
+                              </div>
+                         </div>
                     </div>
                     <div>
                          <h3 class="font-semibold mb-3">Navigasi</h3>
@@ -255,11 +306,33 @@
                               <li><a href="#testimoni" class="hover:text-indigo-600">Testimoni</a></li>
                          </ul>
                     </div>
-                    <div>
+                    <div class="mt-3">
                          <h3 class="font-semibold mb-3">Kontak</h3>
                          <p class="text-md mt-2"><i class="fas fa-envelope mr-3"></i>info@superparenting.id</p>
                          <p class="text-md mt-2"><i class="fas fa-phone mr-3"></i>+62 812-3456-7890</p>
                          <p class="text-md mt-2"><i class="fas fa-map-marker-alt mr-3"></i>Makassar, Indonesia</p>
+
+                         <div class="flex space-x-3 md:mt-4 mt-10 justify-center md:justify-start">
+                              <a href="#" target="_blank" class="transition transform hover:scale-110 duration-200 bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center shadow">
+                                   <i class="fab fa-facebook-f"></i>
+                              </a>
+
+                              <a href="#" target="_blank" class="transition transform hover:scale-110 duration-200 bg-red-600 hover:bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center shadow">
+                                   <i class="fab fa-youtube"></i>
+                              </a>
+
+                              <a href="#" target="_blank" class="transition transform hover:scale-110 duration-200 bg-black hover:bg-gray-800 text-white rounded-full w-10 h-10 flex items-center justify-center shadow">
+                                   <i class="fab fa-tiktok"></i>
+                              </a>
+
+                              <a href="#" target="_blank" class="transition transform hover:scale-110 duration-200 bg-gray-900 hover:bg-gray-700 text-white rounded-full w-10 h-10 flex items-center justify-center shadow">
+                                   <i class="fab fa-x-twitter"></i>
+                              </a>
+
+                              <a href="#" target="_blank" class="transition transform hover:scale-110 duration-200 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white rounded-full w-10 h-10 flex items-center justify-center shadow">
+                                   <i class="fab fa-instagram"></i>
+                              </a>
+                         </div>
                     </div>
                </div>
                
@@ -267,14 +340,85 @@
           </footer>
 
           <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+          
           <script>AOS.init();</script>
+
           <script src="../public/icons/js/all.js"></script>
+          
           <script>
                const hamburger = document.getElementById('hamburger');
                const navMenu = document.getElementById('nav-menu');
 
                hamburger.addEventListener('click', () => {
                navMenu.classList.toggle('hidden');
+               });
+          </script>
+
+          <script>
+               const inputBukti = document.getElementById('buktiPembayaran');
+               const preview = document.getElementById('previewBukti');
+               const previewWrapper = document.getElementById('previewWrapper');
+               const uploadText = document.getElementById('uploadText');
+               const removeBtn = document.getElementById('removeBtn');
+
+               function resetUpload() {
+                    inputBukti.value = '';
+                    preview.src = '';
+                    previewWrapper.classList.add('hidden');
+                    preview.style.opacity = 0;
+                    uploadText.classList.remove('hidden');
+               }
+
+               inputBukti.addEventListener('change', function () {
+                    const file = this.files[0];
+
+                    if (!file) {
+                         resetUpload();
+                         return;
+                    }
+
+                    if (!file.type.startsWith('image/')) {
+                         alert('File harus berupa gambar!');
+                         resetUpload();
+                         return;
+                    }
+
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                         preview.src = e.target.result;
+                         uploadText.classList.add('hidden');
+                         previewWrapper.classList.remove('hidden');
+                         // Fade in image
+                         setTimeout(() => {
+                         preview.style.opacity = 1;
+                         }, 50);
+                    };
+                    
+                    reader.readAsDataURL(file);
+               });
+
+               removeBtn.addEventListener('click', resetUpload);
+
+               // Optional: drag & drop effect
+               const uploadArea = document.getElementById('uploadArea');
+               uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.add('border-indigo-600', 'bg-indigo-50');
+               });
+
+               uploadArea.addEventListener('dragleave', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('border-indigo-600', 'bg-indigo-50');
+               });
+
+               uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('border-indigo-600', 'bg-indigo-50');
+                    if (e.dataTransfer.files.length > 0) {
+                         inputBukti.files = e.dataTransfer.files;
+                         inputBukti.dispatchEvent(new Event('change'));
+                    }
                });
           </script>
      </body>
