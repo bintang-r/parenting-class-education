@@ -1,4 +1,5 @@
-<?php 
+<?php
 
-require_once __DIR__ . '/config.php';
-require_once __DIR__ . '/src/index.php';
+// Redirect ke /src/index.php jika file ini diakses langsung
+header('Location: src/index.php');
+exit;
