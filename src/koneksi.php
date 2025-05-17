@@ -1,9 +1,19 @@
 <?php
 
-$host = "localhost";
-$user = "root";
+require_once __DIR__ . '/config.php';
+
+$host = "";
+$user = "";
 $pass = "";
-$db   = "db_bintang29"; 
+$db   = ""; 
+
+// CONFIG DATABASE
+$config = databaseConfig();
+
+$host = $config['host'];
+$user = $config['user'];
+$pass = $config['password'];
+$db   = $config['database'];
 
 $conn = mysqli_connect($host, $user, $pass, $db);
 
