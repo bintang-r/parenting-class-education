@@ -54,7 +54,7 @@
 
           <!-- Header -->
           <header class="bg-white shadow px-4 py-4 flex justify-between items-center md:ml-0 ml-64">
-               <h1 class="text-xl font-semibold">Dashboard</h1>
+               <h1 class="text-xl font-semibold">Beranda</h1>
                <div class="relative flex items-center gap-2">
                     <span class="hidden sm:inline">Admin</span>
                     <button id="userMenuButton" onclick="toggleUserMenu()" class="focus:outline-none">
