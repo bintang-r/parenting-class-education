@@ -108,6 +108,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3/dist/umd/simple-datatables.js"></script>
 
+<script src="../public/js/navbar.js"></script>
+
 <script>
      document.addEventListener("DOMContentLoaded", function() {
           if (document.getElementById("search-table") && typeof simpleDatatables !== 'undefined' && typeof simpleDatatables.DataTable !== 'undefined') {
