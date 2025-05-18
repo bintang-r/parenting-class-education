@@ -74,6 +74,7 @@
      <title>Super Parenting | Tambah Pengguna</title>
      <link rel="stylesheet" href="../../public/styles/datatable.css">
      <link rel="stylesheet" href="../../public/styles/sidebar.css">
+     <link rel="icon" type="image/x-icon" href="../../public/favicon.ico">
      
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">

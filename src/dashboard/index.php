@@ -13,6 +13,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <script src="https://cdn.tailwindcss.com"></script>
      <link rel="stylesheet" href="../../public/icons/css/all.css" />
+     <link rel="icon" type="image/x-icon" href="../../public/favicon.ico">
      <title>Super Parenting | Dashboard</title>
      <style>
           .sidebar-open {
@@ -34,7 +35,7 @@
           </div>
 
           <nav class="mt-4 space-y-1">
-              <a href="./index.php" class="flex items-center px-4 py-2 hover:bg-indigo-600">
+               <a href="./index.php" class="flex items-center px-4 py-2 hover:bg-indigo-600">
                     <i class="fas fa-tachometer-alt mr-3"></i> Beranda
                </a>
                <a href="./pengguna.php" class="flex items-center px-4 py-2 hover:bg-indigo-600">
