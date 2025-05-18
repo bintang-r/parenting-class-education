@@ -1,6 +1,6 @@
 <?php
      require_once '../components/header.php';
-     
+
      session_start();
      if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset($_SESSION['id_user'])) {
           header("Location: ../login.php");
@@ -128,7 +128,7 @@
                                    <?php endforeach; ?>
                               <?php else: ?>
                                    <tr>
-                                        <td colspan="4" class="px-6 py-4 text-center text-gray-500">Tidak ada data peserta.</td>
+                                        <td colspan="10" class="px-6 py-4 text-center text-gray-500">Tidak ada data peserta.</td>
                                    </tr>
                               <?php endif; ?>
                          </tbody>
