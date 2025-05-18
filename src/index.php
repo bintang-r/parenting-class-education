@@ -345,7 +345,7 @@ daftarKelasParenting(); // panggil fungsi
                                    </div>
                                    <div class="flex flex-col items-center mt-10 md:mt-0 w-full md:w-auto">
                                         <span class="text-5xl md:text-7xl font-black text-indigo-700 drop-shadow-lg" id="pesertaCounter">0</span>
-                                        <a href="" class="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold px-7 py-3 rounded-xl shadow-lg transition-all duration-200 text-base md:text-lg border-2 border-indigo-500 hover:border-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                                        <a href="peserta.php" class="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold px-7 py-3 rounded-xl shadow-lg transition-all duration-200 text-base md:text-lg border-2 border-indigo-500 hover:border-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
                                              <i class="fas fa-table"></i>
                                              Lihat Data Peserta
                                         </a>

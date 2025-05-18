@@ -89,7 +89,6 @@
                                    <th class="px-6 py-3 text-left font-semibold tracking-wider">Nama</th>
                                    <th class="px-6 py-3 text-left font-semibold tracking-wider">Nomor Ponsel</th>
                                    <th class="px-6 py-3 text-left font-semibold tracking-wider">Email</th>
-                                   <th class="px-6 py-3 text-left font-semibold tracking-wider">Nama</th>
                                    <th class="px-6 py-3 text-left font-semibold tracking-wider">Jenis Paket</th>
                                    <th class="px-6 py-3 text-left font-semibold tracking-wider">Bukti Pembayaran</th>
                                    <th class="px-6 py-3 text-left font-semibold tracking-wider">Status Verifikasi</th>
@@ -104,7 +103,6 @@
                                              <td class="px-6 py-4"><?= htmlspecialchars($data['nama']); ?></td>
                                              <td class="px-6 py-4"><?= htmlspecialchars($data['nomor_ponsel']); ?></td>
                                              <td class="px-6 py-4"><?= htmlspecialchars($data['email']); ?></td>
-                                             <td class="px-6 py-4"><?= htmlspecialchars($data['nama']); ?></td>
                                              <td class="px-6 py-4"><?= htmlspecialchars($data['jenis_paket']); ?></td>
                                              <td class="px-6 py-4">
                                                   <?php if (!empty($data['bukti_pembayaran'])): ?>
