@@ -1,4 +1,6 @@
 <?php 
+     require_once '../components/header.php';
+     
      session_start();
      if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true || !isset($_SESSION['id_user'])) {
           header("Location: ../login.php");
@@ -70,23 +72,7 @@
      <div class="flex-1 flex flex-col w-0">
 
           <!-- Header -->
-          <header class="bg-white shadow px-4 py-4 flex justify-between items-center md:ml-0 ml-64">
-               <h1 class="text-xl font-semibold">Pengguna</h1>
-               <div class="relative flex items-center gap-2">
-                    <span class="hidden sm:inline">Admin</span>
-                    <button id="userMenuButton" onclick="toggleUserMenu()" class="focus:outline-none">
-                         <i class="fas fa-user-circle text-2xl text-gray-700"></i>
-                    </button>
-                    <div id="userDropdown" class="absolute right-0 mt-[100px] w-[200px] bg-white rounded shadow-lg py-2 z-50 hidden">
-                         <a href="./logout.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                              <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                         </a>
-                         <a href="../index.php" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-                              <i class="fas fa-home mr-2"></i> Halaman Beranda
-                         </a>
-                    </div>
-               </div>
-          </header>
+          <?= header_component_dashboard(); ?>
 
           <!-- Content -->
           <main class="flex-1 overflow-y-auto p-6 md:ml-0 ml-64">
