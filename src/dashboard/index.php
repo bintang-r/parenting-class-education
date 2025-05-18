@@ -31,6 +31,42 @@
                $totalPesertaSudah = $row['total'];
           }
 
+          $dataMap = [];
+
+          $result = $conn->query("
+               SELECT DATE(created_at) as tanggal, 
+                    COUNT(*) as total, 
+                    SUM(status_verifikasi = 'sudah') as sudah_verifikasi, 
+                    SUM(status_verifikasi != 'sudah') as belum_verifikasi
+               FROM peserta
+               WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL 9 DAY)
+               GROUP BY tanggal
+          ");
+
+          while ($row = $result->fetch_assoc()) {
+               $dataMap[$row['tanggal']] = [
+                    'total' => (int)$row['total'],
+                    'sudah' => (int)$row['sudah_verifikasi'],
+                    'belum' => (int)$row['belum_verifikasi']
+               ];
+          }
+
+          $chartData = [];
+          for ($i = 9; $i >= 0; $i--) {
+               $tanggal = date('Y-m-d', strtotime("-$i days"));
+               if (isset($dataMap[$tanggal])) {
+                    $chartData[] = array_merge(['tanggal' => $tanggal], $dataMap[$tanggal]);
+               } else {
+                    $chartData[] = [
+                         'tanggal' => $tanggal,
+                         'total' => 0,
+                         'sudah' => 0,
+                         'belum' => 0
+                    ];
+               }
+          }
+
+
           $conn->close();
      ?>
 
@@ -124,11 +160,90 @@
                          <h2 class="text-2xl font-semibold mb-2">Welcome back, Admin!</h2>
                          <p class="text-gray-600">You are logged in to the Super Parenting dashboard. Monitor stats, manage users, and configure settings easily from here.</p>
                     </div>
+
+                    <div class="bg-white p-6 mt-6 rounded-xl shadow">
+                         <h2 class="text-xl font-bold mb-4">Grafik Peserta Seminar (10 Hari Terakhir)</h2>
+                         <div id="chart-bar"></div>
+                    </div>
                </main>
           </div>
      </div>
 
      <script src="../../public/icons/js/all.js"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+     
+     <script>
+          const chartData = <?= json_encode($chartData); ?>;
+
+          const categories = chartData.map(item => item.tanggal);
+          const totalSeries = chartData.map(item => item.total);
+          const sudahSeries = chartData.map(item => item.sudah);
+          const belumSeries = chartData.map(item => item.belum);
+
+          const options = {
+               chart: {
+                    height: 400,
+                    type: 'bar',
+                    stacked: false, // Bukan tumpukan
+                    toolbar: {
+                         show: true
+                    }
+               },
+               plotOptions: {
+                    bar: {
+                         horizontal: false,
+                         columnWidth: '40%', // Lebar bar
+                         endingShape: 'rounded'
+                    }
+               },
+               stroke: {
+                    show: true,
+                    width: 2,
+                    colors: ['transparent']
+               },
+               series: [
+                    {
+                         name: 'Sudah Verifikasi',
+                         data: sudahSeries
+                    },
+                    {
+                         name: 'Belum Verifikasi',
+                         data: belumSeries
+                    },
+                    {
+                         name: 'Total Peserta',
+                         data: totalSeries
+                    }
+               ],
+               colors: ['#10b981', '#f59e0b', '#4f46e5'],
+               xaxis: {
+                    categories: categories
+               },
+               yaxis: {
+                    title: {
+                         text: 'Jumlah Peserta'
+                    }
+               },
+               fill: {
+                    opacity: 1
+               },
+               tooltip: {
+                    y: {
+                         formatter: function (val) {
+                              return val + ' peserta';
+                         }
+                    }
+               },
+               legend: {
+                    position: 'top'
+               }
+          };
+
+          const chart = new ApexCharts(document.querySelector("#chart-bar"), options);
+          chart.render();
+     </script>
+
 
      <script>
           function toggleUserMenu() {
@@ -145,22 +260,22 @@
      </script>
 
      <script>
-     const sidebar = document.getElementById('sidebar');
-     const overlay = document.getElementById('overlay');
+          const sidebar = document.getElementById('sidebar');
+          const overlay = document.getElementById('overlay');
 
-     function toggleSidebar() {
-          const isOpen = sidebar.classList.contains('sidebar-open');
+          function toggleSidebar() {
+               const isOpen = sidebar.classList.contains('sidebar-open');
 
-          if (isOpen) {
-          sidebar.classList.remove('sidebar-open');
-          sidebar.classList.add('sidebar-closed');
-          overlay.classList.add('hidden');
-          } else {
-          sidebar.classList.remove('sidebar-closed');
-          sidebar.classList.add('sidebar-open');
-          overlay.classList.remove('hidden');
+               if (isOpen) {
+               sidebar.classList.remove('sidebar-open');
+               sidebar.classList.add('sidebar-closed');
+               overlay.classList.add('hidden');
+               } else {
+               sidebar.classList.remove('sidebar-closed');
+               sidebar.classList.add('sidebar-open');
+               overlay.classList.remove('hidden');
+               }
           }
-     }
      </script>
      </body>
      </html>
