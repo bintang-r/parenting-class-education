@@ -54,7 +54,9 @@
                     <!-- Menu -->
                     <ul id="nav-menu" class="hidden md:flex md:space-x-6 space-y-3 md:pb-3 pb-10 font-medium absolute md:static top-16 left-0 w-full md:w-auto bg-white md:bg-transparent p-5 md:p-0 shadow-md md:shadow-none flex-col md:flex-row md:items-center z-40">
                          <li>
-                              <a href="index.php#jadwal" class="bg-indigo-600 text-white px-4 py-2 mt-1 rounded hover:bg-indigo-700 flex items-center"><i class="fas fa-arrow-left mr-1"></i> Kembali Ke Menu Utama</a>
+                              <a href="#" id="back-link" class="bg-indigo-600 text-white px-4 py-2 mt-1 rounded hover:bg-indigo-700 flex items-center">
+                                   <i class="fas fa-arrow-left mr-1"></i> Kembali Ke Menu Utama
+                              </a>
                          </li>
                     </ul>
                </div>
@@ -113,6 +115,22 @@
                     searchable: true,
                     sortable: false
                });
+          }
+     });
+</script>
+
+ <script>
+     document.addEventListener("DOMContentLoaded", function() {
+          var backLink = document.getElementById("back-link");
+          if (backLink) {
+                    backLink.addEventListener("click", function(e) {
+                         e.preventDefault();
+                         if (document.referrer) {
+                              window.location.href = document.referrer;
+                         } else {
+                              window.location.href = "index.php#jadwal";
+                         }
+                    });
           }
      });
 </script>

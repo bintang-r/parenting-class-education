@@ -92,7 +92,7 @@ function daftarKelasParenting() {
 
           if (mysqli_stmt_execute($stmt)) {
                echo "<script>alert('Pendaftaran berhasil. Terima kasih!');</script>";
-               echo "<script>window.location.href='#top';</script>";
+               echo "<script>window.location.href='peserta.php';</script>";
           } else {
                echo "<script>alert('Pendaftaran gagal: " . mysqli_error($conn) . "');</script>";
           }
