@@ -12,8 +12,7 @@ function header_component_dashboard() {
           session_start();
      }
 
-     require_once '../koneksi.php';
-     // CONFIG DATABASE
+     require '../koneksi.php';
 
      $id_user = $_SESSION['id_user'] ?? null;
      $name = 'Admin';
