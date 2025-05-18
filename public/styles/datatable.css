@@ -1,0 +1,100 @@
+/* Custom scrollbar for table */
+#search-table::-webkit-scrollbar {
+  height: 8px;
+  background: #e0e7ff;
+}
+#search-table::-webkit-scrollbar-thumb {
+  background: #6366f1;
+  border-radius: 4px;
+}
+.simple-datatables .dataTable-top {
+  margin-bottom: 1rem;
+}
+.simple-datatables .dataTable-input {
+  border-radius: 0.375rem;
+  border: 1px solid #c7d2fe;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.simple-datatables .dataTable-pagination .active a {
+  background: #6366f1;
+  color: #fff !important;
+  border-radius: 0.375rem;
+}
+.simple-datatables .dataTable-pagination a {
+  color: #6366f1 !important;
+  border-radius: 0.375rem;
+}
+
+.datatable-top,
+.datatable-bottom {
+  padding: 20px;
+}
+
+/* Custom pagination link style */
+.datatable-pagination-list-item-link {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 0.375rem;
+  color: #6366f1 !important;
+  background: #e0e7ff;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  font-weight: 500;
+  margin: 10px 2px;
+  box-shadow: 0 1px 2px 0 rgba(99, 102, 241, 0.08);
+}
+
+.datatable-pagination-list-item-link:hover,
+.datatable-pagination-list-item-link:focus {
+  background: #6366f1;
+  color: #fff !important;
+  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+/* Custom pagination styles */
+.datatable-pagination-list-item {
+  display: inline-block;
+  margin: 0 4px;
+}
+.datatable-pagination-list-item a {
+  padding: 6px 14px;
+  border-radius: 0.375rem;
+  color: #6366f1 !important;
+  background: #e0e7ff;
+  transition: background 0.2s, color 0.2s;
+}
+.datatable-pagination-list-item.active a {
+  background: #6366f1;
+  color: #fff !important;
+}
+.datatable-pagination-list-item.datatable-disabled a {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.datatable-pagination-list-item.datatable-hidden {
+  display: none;
+}
+
+.datatable-input {
+  border-radius: 0.5rem;
+  border: 2px solid #6366f1;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  background: #f5f7ff;
+  color: #3730a3;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: 0 2px 8px 0 rgba(99, 102, 241, 0.08);
+  margin: 20px 0px;
+}
+
+.datatable-input:focus {
+  border-color: #3730a3;
+  box-shadow: 0 0 0 2px #a5b4fc;
+  background: #fff;
+}
+.datatable-input::placeholder {
+  color: #a5b4fc;
+  opacity: 1;
+}
