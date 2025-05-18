@@ -16,7 +16,6 @@
 
 
 -- Dumping database structure for db_bintang29
-DROP DATABASE IF EXISTS `db_bintang29`;
 CREATE DATABASE IF NOT EXISTS `db_bintang29` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_bintang29`;
 
