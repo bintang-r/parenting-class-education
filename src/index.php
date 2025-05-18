@@ -79,7 +79,7 @@ function daftarKelasParenting() {
                $bukti_pembayaran_nama = $file_name;
                }
 
-               $bukti_pembayaran_path = 'public/storage/peserta/file-img/' . $hash_name;
+               $bukti_pembayaran_path = 'public/storage/peserta/' . $hash_name;
                $bukti_pembayaran_nama = $file_name;
           } else {
                echo "<script>alert('Bukti pembayaran wajib diupload.');</script>";
