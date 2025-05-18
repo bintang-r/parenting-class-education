@@ -78,6 +78,7 @@
           <script src="https://cdn.tailwindcss.com"></script>
           <link rel="stylesheet" href="../../public/icons/css/all.css" />
           <link rel="icon" type="image/x-icon" href="../../public/favicon.ico">
+          <link rel="stylesheet" href="../../public/styles/sidebar.css">
           <title>Super Parenting | Dashboard</title>
           <style>
                .sidebar-open {
@@ -123,7 +124,7 @@
                <!-- Content -->
                <main class="flex-1 overflow-y-auto p-6 md:ml-0 ml-64">
                     <!-- Cards -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                    <div id="content" class="">
                          <div class="bg-white p-5 rounded-xl shadow hover:shadow-lg transition">
                               <div class="flex items-center justify-between">
                                    <div>
@@ -263,17 +264,33 @@
           const sidebar = document.getElementById('sidebar');
           const overlay = document.getElementById('overlay');
 
+          // Responsive sidebar: hide by default on mobile, show on md+
+          function handleSidebarOnResize() {
+               if (window.innerWidth >= 768) {
+                    sidebar.classList.add('sidebar-open');
+                    sidebar.classList.remove('sidebar-closed');
+                    overlay.classList.add('hidden');
+               } else {
+                    sidebar.classList.remove('sidebar-open');
+                    sidebar.classList.add('sidebar-closed');
+                    overlay.classList.add('hidden');
+               }
+          }
+
+          // Call on load and resize
+          window.addEventListener('resize', handleSidebarOnResize);
+          window.addEventListener('DOMContentLoaded', handleSidebarOnResize);
+
           function toggleSidebar() {
                const isOpen = sidebar.classList.contains('sidebar-open');
-
                if (isOpen) {
-               sidebar.classList.remove('sidebar-open');
-               sidebar.classList.add('sidebar-closed');
-               overlay.classList.add('hidden');
+                    sidebar.classList.remove('sidebar-open');
+                    sidebar.classList.add('sidebar-closed');
+                    overlay.classList.add('hidden');
                } else {
-               sidebar.classList.remove('sidebar-closed');
-               sidebar.classList.add('sidebar-open');
-               overlay.classList.remove('hidden');
+                    sidebar.classList.remove('sidebar-closed');
+                    sidebar.classList.add('sidebar-open');
+                    overlay.classList.remove('hidden');
                }
           }
      </script>

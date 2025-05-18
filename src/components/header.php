@@ -30,7 +30,13 @@ function header_component_dashboard() {
 
      return '
           <header class="bg-white shadow px-4 py-4 flex justify-between items-center md:ml-0 ml-64">
-               <h1 class="text-xl font-semibold">Pengguna</h1>
+               <h1 class="text-xl font-semibold">
+                    <button id="hamburgerMenu" class="mr-2 flex flex-col justify-center items-center w-8 h-8 focus:outline-none md:hidden" onclick="toggleSidebar()">
+                         <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
+                         <span class="block w-6 h-0.5 bg-gray-800 mb-1"></span>
+                         <span class="block w-6 h-0.5 bg-gray-800"></span>
+                    </button>
+               </h1>
                <div class="relative flex items-center gap-2">
                     <span class="hidden sm:inline">'.htmlspecialchars($name).'</span>
                     <button id="userMenuButton" onclick="toggleUserMenu()" class="focus:outline-none">
