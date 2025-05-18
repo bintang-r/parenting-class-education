@@ -62,7 +62,7 @@
                </div>
           </nav>
 
-          <main class="flex-1 overflow-y-auto p-6 md:ml-0 ml-64 mt-20">
+          <main class="flex-1 overflow-y-auto p-6 mt-20">
                <!-- Pretitle -->
                <div class="mb-2 text-sm text-gray-500 uppercase tracking-wide">Peserta Seminar</div>
                <!-- Title -->
