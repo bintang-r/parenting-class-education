@@ -25,7 +25,7 @@ function daftarKelasParenting() {
           $nomor_ponsel = isset($_POST['nomorPonsel']) ? trim($_POST['nomorPonsel']) : '';
           $jenis_paket = isset($_POST['paket']) ? trim($_POST['paket']) : '';
 
-            // Validasi wajib isi dan minimal 2 karakter
+          // Validasi wajib isi dan minimal 2 karakter
           if (
                empty($nama) || strlen($nama) < 2 ||
                empty($email) || strlen($email) < 2 ||
@@ -229,6 +229,69 @@ daftarKelasParenting(); // panggil fungsi
                </div>
           </section>
 
+          <!-- Card Pengisi Seminar -->
+          <section id="pengisi" class="py-20 px-6 max-w-6xl mx-auto" data-aos="fade-up">
+               <h2 class="text-4xl font-extrabold mb-12 text-center text-gray-900 tracking-wide">
+                         Narasumber <span class="text-indigo-600">Utama</span>
+               </h2>
+               <div class="flex flex-wrap gap-10 justify-center items-stretch">
+                    <!-- Card 1 -->
+                    <div class="bg-gradient-to-br from-indigo-50 via-white to-blue-100 rounded-3xl shadow-2xl p-8 flex flex-col items-center w-full md:w-[340px] border border-indigo-100 hover:shadow-indigo-200 transition-shadow duration-300">
+                         <div class="relative mb-6">
+                              <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-indigo-200 to-blue-200 flex items-center justify-center shadow-lg border-4 border-indigo-300 overflow-hidden">
+                                   <img src="../public/img/doctor/doctor-1.jpg" alt="Foto Narasumber" class="w-32 h-32 rounded-full object-cover bg-gray-200" />
+                              </div>
+                              <span class="absolute bottom-2 right-2 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Narasumber</span>
+                         </div>
+                         <h3 class="text-2xl font-bold text-indigo-700 mb-1">Dr Ani Listiani</h3>
+                         <p class="text-md text-indigo-500 mb-2 font-semibold">Pakar Parenting & Motivator</p>
+                         <p class="text-gray-700 text-sm leading-relaxed mb-3 text-center">
+                              Dr Ani Listiani adalah pakar parenting dengan pengalaman lebih dari 15 tahun membimbing orang tua dan anak di berbagai seminar nasional. Beliau dikenal atas pendekatan komunikatif, inspiratif, serta telah menulis beberapa buku best seller tentang pola asuh anak di era digital. Dr Ani aktif sebagai motivator keluarga dan konsultan di berbagai media.
+                         </p>
+                         <div class="flex flex-wrap gap-2 mt-auto">
+                              <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Parenting Expert</span>
+                              <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Motivator</span>
+                         </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="bg-gradient-to-br from-indigo-50 via-white to-blue-100 rounded-3xl shadow-2xl p-8 flex flex-col items-center w-full md:w-[340px] border border-indigo-100 hover:shadow-indigo-200 transition-shadow duration-300">
+                         <div class="relative mb-6">
+                              <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-indigo-200 to-blue-200 flex items-center justify-center shadow-lg border-4 border-indigo-300 overflow-hidden">
+                                   <img src="../public/img/doctor/doctor-2.jpg" alt="Foto Narasumber" class="w-32 h-32 rounded-full object-cover bg-gray-200" />
+                              </div>
+                              <span class="absolute bottom-2 right-2 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Narasumber</span>
+                         </div>
+                         <h3 class="text-2xl font-bold text-indigo-700 mb-1">Dr. Lee Huan, M.Psi</h3>
+                         <p class="text-md text-indigo-500 mb-2 font-semibold">Psikolog Anak & Remaja</p>
+                         <p class="text-gray-700 text-sm leading-relaxed mb-3 text-center">
+                              Dr. Lee Huan adalah psikolog anak dan remaja yang telah membantu ribuan keluarga melalui konsultasi, seminar, dan pelatihan nasional. Beliau dikenal atas pendekatan empatik dan solutif dalam menangani masalah perkembangan anak serta aktif sebagai pembicara di berbagai forum parenting.
+                         </p>
+                         <div class="flex flex-wrap gap-2 mt-auto">
+                              <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-medium">Psikolog Anak</span>
+                              <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium">Pembicara Nasional</span>
+                         </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-gradient-to-br from-indigo-50 via-white to-blue-100 rounded-3xl shadow-2xl p-8 flex flex-col items-center w-full md:w-[340px] border border-indigo-100 hover:shadow-indigo-200 transition-shadow duration-300">
+                         <div class="relative mb-6">
+                              <div class="w-36 h-36 rounded-full bg-gradient-to-tr from-indigo-200 to-blue-200 flex items-center justify-center shadow-lg border-4 border-indigo-300 overflow-hidden">
+                                   <img src="../public/img/doctor/doctor-3.jpg" alt="Foto Narasumber" class="w-32 h-32 rounded-full object-cover bg-gray-200" />
+                              </div>
+                              <span class="absolute bottom-2 right-2 bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow">Narasumber</span>
+                         </div>
+                         <h3 class="text-2xl font-bold text-indigo-700 mb-1">Dr. Hendra Wijaya</h3>
+                         <p class="text-md text-indigo-500 mb-2 font-semibold">Konselor Keluarga & Penulis</p>
+                         <p class="text-gray-700 text-sm leading-relaxed mb-3 text-center">
+                              Dr. Hendra Wijaya adalah konselor keluarga dan penulis buku parenting yang telah berpengalaman lebih dari 10 tahun. Ia aktif membina komunitas orang tua, memberikan konsultasi, serta menulis artikel dan buku inspiratif tentang keharmonisan keluarga di era modern.
+                         </p>
+                         <div class="flex flex-wrap gap-2 mt-auto">
+                              <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Konselor Keluarga</span>
+                              <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-medium">Author</span>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
           <!-- Jadwal -->
           <section id="jadwal" class="py-20 bg-gradient-to-r from-blue-500 to-indigo-800 rounded-3xl" data-aos="fade-up">
                <div class="max-w-5xl mx-auto px-6">
@@ -254,9 +317,47 @@ daftarKelasParenting(); // panggil fungsi
                               <p class="text-gray-600">Ruang Phinisi, Hotel Claro Makassar</p>
                          </div>
                     </div>
+
+                    <div class="flex flex-col items-center justify-center py-12">
+                         <?php
+                              require 'koneksi.php';
+                              $jumlahPeserta = 0;
+                              if (isset($conn) && $conn) {
+                                   $result = mysqli_query($conn, "SELECT COUNT(*) as total FROM peserta");
+                                   if ($result && $row = mysqli_fetch_assoc($result)) {
+                                        $jumlahPeserta = (int)$row['total'];
+                                   }
+                                   mysqli_free_result($result);
+                                   mysqli_close($conn);
+                              }
+                         ?>
+
+                         <div class="w-full max-w-3xl mx-auto">
+                              <div class="bg-gradient-to-br from-indigo-100 via-white to-blue-200 rounded-3xl shadow-2xl flex flex-col md:flex-row items-center justify-between px-8 py-12 gap-10 border border-indigo-200 hover:shadow-indigo-300 transition-shadow duration-300">
+                                   <div class="flex items-center gap-6 w-full md:w-auto">
+                                        <div class="bg-white border-4 border-indigo-200 shadow-xl rounded-full w-20 h-20 md:w-24 md:h-24 flex items-center justify-center text-4xl md:text-5xl text-indigo-600">
+                                             <i class="fas fa-users"></i>
+                                        </div>
+                                        <div>
+                                             <h3 class="text-2xl md:text-3xl font-extrabold text-indigo-800 mb-1 tracking-wide">Total Peserta</h3>
+                                             <p class="text-gray-500 text-base md:text-lg">yang sudah bergabung</p>
+                                        </div>
+                                   </div>
+                                   <div class="flex flex-col items-center mt-10 md:mt-0 w-full md:w-auto">
+                                        <span class="text-5xl md:text-7xl font-black text-indigo-700 drop-shadow-lg" id="pesertaCounter">0</span>
+                                        <a href="" class="mt-6 inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold px-7 py-3 rounded-xl shadow-lg transition-all duration-200 text-base md:text-lg border-2 border-indigo-500 hover:border-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+                                             <i class="fas fa-table"></i>
+                                             Lihat Data Peserta
+                                        </a>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+                              </div>
+                         </div>
+                    </div>
                </div>
           </section>
-
           <!-- paket -->
           <section id="paket" class="py-16 px-6" data-aos="fade-up">
                <div class="max-w-6xl mx-auto">
@@ -471,5 +572,28 @@ daftarKelasParenting(); // panggil fungsi
           <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
           <script>AOS.init()</script>
+
+          <script>
+               // Counter animasi jumlah peserta
+               document.addEventListener('DOMContentLoaded', function () {
+                    var counter = document.getElementById('pesertaCounter');
+                    var target = <?= $jumlahPeserta ?>;
+                    var duration = 1200; // ms
+                    var frameRate = 30;
+                    var totalFrames = Math.round(duration / (1000 / frameRate));
+                    var current = 0;
+                    var increment = target / totalFrames;
+                    function animateCounter() {
+                              current += increment;
+                              if (current < target) {
+                                   counter.textContent = Math.floor(current);
+                                   requestAnimationFrame(animateCounter);
+                              } else {
+                                   counter.textContent = target;
+                              }
+                    }
+                    animateCounter();
+               });
+            </script>
      </body>
 </html>
