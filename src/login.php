@@ -98,7 +98,7 @@
      <script src="https://cdn.tailwindcss.com"></script>
      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
      <link rel="stylesheet" href="../public/icons/css/all.css" />
-     <link rel="icon" type="image/x-icon" href="/uts-web/public/favicon.ico">
+     <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
      
      <title>Super Parenting | Login</title>
 </head>
@@ -107,7 +107,7 @@
      <div class="flex flex-col items-center">
           <div class="bg-white py-2 px-4 mb-3 rounded-xl">
                <div class="flex">
-                    <img src="/uts-web/public/img/logo-super-parenting.png" class="w-[100px]" alt="">
+                    <img src="../public/img/logo-super-parenting.png" class="w-[100px]" alt="">
                     <div class="pr-4 flex">
                          <h3 class="text-2xl text-indigo-600 font-bold my-auto">Super Parenting</h3>
                     </div>
