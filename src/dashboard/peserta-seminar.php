@@ -134,8 +134,8 @@
                                                   <?php endif; ?>
                                              </td>
                                              <td class="px-6 py-4">
-                                                  <a href="verifikasi-peserta.php?id=<?= $data['id_peserta']; ?>" class="text-green-600 hover:underline mr-2">Verifikasi</a>
-                                                  <a href="hapus-peserta.php?id=<?= $data['id_peserta']; ?>" class="text-red-600 hover:underline" onclick="return confirm('Yakin ingin menghapus peserta ini?')">Hapus</a>
+                                                  <a href="verifikasi-peserta-seminar.php?id=<?= $data['id_peserta']; ?>" class="text-green-600 hover:underline mr-2">Verifikasi</a>
+                                                  <a href="hapus-peserta-seminar.php?id=<?= $data['id_peserta']; ?>" class="text-red-600 hover:underline" onclick="return confirm('Yakin ingin menghapus peserta ini?')">Hapus</a>
                                              </td>
                                    </tr>
                                    <?php endforeach; ?>
