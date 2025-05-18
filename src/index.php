@@ -353,9 +353,6 @@ daftarKelasParenting(); // panggil fungsi
                               </div>
                          </div>
                     </div>
-                              </div>
-                         </div>
-                    </div>
                </div>
           </section>
           <!-- paket -->
