@@ -127,10 +127,10 @@
                                                   <?php endif; ?>
                                              </td>
                                              <td class="px-6 py-4">
-                                                  <?php if ($data['status_verifikasi'] == 'Terverifikasi'): ?>
-                                                       <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Terverifikasi</span>
+                                                  <?php if ($data['status_verifikasi'] == 'sudah'): ?>
+                                                       <span class="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">Sudah</span>
                                                   <?php else: ?>
-                                                       <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Belum Diverifikasi</span>
+                                                       <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded text-xs">Belum</span>
                                                   <?php endif; ?>
                                              </td>
                                              <td class="px-6 py-4">
