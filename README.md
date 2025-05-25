@@ -15,7 +15,8 @@ Website **Parenting Class Education** bertujuan untuk menyediakan platform pembe
 - **Database**: MySQL
 - **Frontend**: HTML, CSS, JavaScript
 - **Library Tambahan**:
-  - Bootstrap atau Tailwind CSS (jika digunakan)
+  - Tailwind CSS
+  - Data Tabel
 
 ## 🚀 Cara Instalasi
 
